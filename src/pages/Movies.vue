@@ -10,7 +10,7 @@
       <q-pagination v-model="query.page" :max="pages" :maxPages="9" :directionLinks="true" />
     </div>
     <div class="row q-col-gutter-md q-mt-lg">
-      <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2 col-xl-1" v-for="movie in movies" :key="movie.id">
+      <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2 col-xl-1" v-for="movie in movies" :key="movie.id">
         <q-card>
           <q-card-section>
             <q-img :src="movie.medium_cover_image" :ratio="4/6" :placeholder-src="movie.small_cover_image" :style="movie.scary ? 'filter: blur(20px);' : ''" />
@@ -117,7 +117,7 @@ export default {
         const smaller = m.torrents.sort((a, b) => a.size_bytes - b.size_bytes)[0]
         return {
           ...m,
-          scary: m.genres.some(g => this.dontShowGenres.includes(g.toLowerCase())),
+          scary: (m.genres || []).some(g => this.dontShowGenres.includes(g.toLowerCase())),
           magLink: `magnet:?xt=urn:btih:${smaller.hash}&dn=${encodeURIComponent(m.title)}&tr=${this.trackers.join('&tr=')}`
         }
       })
