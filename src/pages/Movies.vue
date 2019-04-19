@@ -117,7 +117,7 @@ export default {
         const smaller = m.torrents.sort((a, b) => a.size_bytes - b.size_bytes)[0]
         return {
           ...m,
-          scary: m.genres.some(g => this.dontShowGenres.includes(g.toLowerCase())),
+          scary: (m.genres || []).some(g => this.dontShowGenres.includes(g.toLowerCase())),
           magLink: `magnet:?xt=urn:btih:${smaller.hash}&dn=${encodeURIComponent(m.title)}&tr=${this.trackers.join('&tr=')}`
         }
       })
