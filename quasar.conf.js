@@ -28,6 +28,9 @@ module.exports = function (ctx) {
         'QLayout',
         'QHeader',
         'QCard',
+        'QBar',
+        'QVideo',
+        'QDialog',
         'QCardSection',
         'QPagination',
         'QDrawer',
@@ -46,7 +49,8 @@ module.exports = function (ctx) {
       ],
 
       directives: [
-        'Ripple'
+        'Ripple',
+        'ClosePopup'
       ],
 
       // Quasar plugins
