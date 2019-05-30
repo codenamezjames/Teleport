@@ -35,6 +35,8 @@ import createApp from './app.js'
 
 import b_Bootaxios from 'boot/axios'
 
+import b_Bootjquery from 'boot/jquery'
+
 
 
 
@@ -52,7 +54,7 @@ const { app, store, router } = createApp()
 
 async function start () {
   
-  const bootFiles = [b_Bootaxios]
+  const bootFiles = [b_Bootaxios,b_Bootjquery]
   for (let i = 0; i < bootFiles.length; i++) {
     if (typeof bootFiles[i] !== 'function') {
       continue
