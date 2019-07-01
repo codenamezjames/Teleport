@@ -17,7 +17,8 @@ export default function (/* { ssrContext } */) {
       paths: ['data', 'settings']
     })],
     modules: {
-      data
+      data,
+      settings
     },
 
     strict: process.env.DEV
