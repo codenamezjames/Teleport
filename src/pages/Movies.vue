@@ -104,7 +104,7 @@ export default {
       window.open(url, '_self')
     },
     async runSearch () {
-      const { data: { data } } = await this.$axios.get('https://yts.lt/api/v2/list_movies.json', {
+      const { data: { data } } = await this.$axios.get(this.$store.state.settings.url, {
         params: {
           query_term: this.query.search,
           page: this.query.page,

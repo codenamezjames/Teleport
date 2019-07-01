@@ -49,6 +49,14 @@
             <q-item-label>Tv</q-item-label>
           </q-item-section>
         </q-item>
+        <q-item clickable :to="{name: 'settings'}">
+          <q-item-section avatar>
+            <q-icon name="fas fa-gear" />
+          </q-item-section>
+          <q-item-section>
+            <q-item-label>Settings</q-item-label>
+          </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 

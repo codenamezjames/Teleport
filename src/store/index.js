@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import createPersistedState from 'vuex-persistedstate'
 
-// import example from './module-example'
+import settings from './settings'
 
 Vue.use(Vuex)
-
 /*
  * If not building with SSR mode, you can
  * directly export the Store instantiation
@@ -12,12 +12,13 @@ Vue.use(Vuex)
 
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
+    plugins: [createPersistedState({
+      paths: ['settings']
+    })],
     modules: {
-      // example
+      settings
     },
 
-    // enable strict mode (adds overhead!)
-    // for dev mode only
     strict: process.env.DEV
   })
 
