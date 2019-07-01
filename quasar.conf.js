@@ -5,7 +5,8 @@ module.exports = function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
-      'axios'
+      'axios',
+      'jquery'
     ],
 
     css: [
@@ -38,7 +39,10 @@ module.exports = function (ctx) {
         'QInput',
         'QPageContainer',
         'QPage',
+        'QTable',
+        'QTd',
         'QToolbar',
+        'QTooltip',
         'QToolbarTitle',
         'QBtn',
         'QIcon',
@@ -66,6 +70,9 @@ module.exports = function (ctx) {
 
     build: {
       scopeHoisting: true,
+      env: ctx.dev
+        ? { API: JSON.stringify('https://eztv.io') }
+        : { API: JSON.stringify('https://eztv.io') }, // Production env
       // vueRouterMode: 'history',
       // vueCompiler: true,
       // gzip: true,

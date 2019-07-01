@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
 
 import settings from './settings'
+import data from './data'
 
 Vue.use(Vuex)
 /*
@@ -13,10 +14,10 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     plugins: [createPersistedState({
-      paths: ['settings']
+      paths: ['data', 'settings']
     })],
     modules: {
-      settings
+      data
     },
 
     strict: process.env.DEV
