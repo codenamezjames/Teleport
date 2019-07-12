@@ -21,7 +21,10 @@ import '@quasar/extras/fontawesome-v5/fontawesome-v5.css'
 
 
 
-import 'quasar-styl'
+// We load Quasar stylus files
+import 'quasar/dist/quasar.styl'
+
+
 
 
 import 'src/css/app.styl'
@@ -33,9 +36,9 @@ import createApp from './app.js'
 
 
 
-import b_Bootaxios from 'boot/axios'
+import qboot_Bootaxios from 'boot/axios'
 
-import b_Bootjquery from 'boot/jquery'
+import qboot_Bootjquery from 'boot/jquery'
 
 
 
@@ -54,7 +57,7 @@ const { app, store, router } = createApp()
 
 async function start () {
   
-  const bootFiles = [b_Bootaxios,b_Bootjquery]
+  const bootFiles = [qboot_Bootaxios,qboot_Bootjquery]
   for (let i = 0; i < bootFiles.length; i++) {
     if (typeof bootFiles[i] !== 'function') {
       continue
